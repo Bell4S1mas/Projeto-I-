@@ -1,0 +1,15 @@
+﻿Nome;Dado;Significado e Unidade de Medida
+UDI;Numérico (inteiro);Identificador único da observação, sequencial de 1 a 10.000. Sem unidade. Serve apenas para rastrear o registro
+Product ID;Texto;Código do produto, formado por uma letra (L, M ou H) seguida de um número serial. A letra indica a variante de qualidade. Sem unidade
+Type;Texto (categórico);Variante de qualidade do produto: L (baixa, cerca de 50% dos registros), M (média, cerca de 30%) e H (alta, cerca de 20%). Sem unidade.
+Air Temperature [K];Numérico (decimal);Temperatura do ar no ambiente de operação da máquina, em kelvin (K). Valores em torno de 300 K (cerca de 27 °C).
+Process temperature [K];Numérico (decimal);Temperatura do processo de fabricação, em kelvin (K). Gerada a partir da temperatura do ar somada a cerca de 10 K a diferença entre as duas está ligada à dissipação de calor.
+Rotational speed [rpm];Numérico (inteiro);Velocidade de rotação da ferramenta, em rotações por minuto (rpm). Calculada a partir de uma potência de 2.860 W com ruído normal adicionado.
+Torque [Nm];Numérico (decimal);Torque aplicado, em newton-metro (Nm). Valores concentrados em torno de 40 Nm, sem valores negativos.
+Tool wear [min];Numérico (inteiro);Desgaste acumulado da ferramenta, em minutos de uso (min). Cada variante de qualidade (H, M, L) soma 5, 3 ou 2 minutos ao desgaste no processo.
+Machine failure;Numérico (binário: 0 ou 1);Variável-alvo da classificação. Vale 1 quando ocorre qualquer um dos cinco modos de falha (TWF, HDF, PWF, OSF ou RNF) e 0 caso contrário. Sem unidade.
+TWF;Numérico (binário: 0 ou 1);Falha por desgaste da ferramenta (Tool Wear Failure). Ocorre quando a ferramenta atinge um desgaste entre 200 e 240 min e é substituída ou falha. Sem unidade.
+HDF;Numérico (binário: 0 ou 1);Falha por dissipação de calor (Heat Dissipation Failure). Ocorre quando a diferença entre as temperaturas do ar e do processo é menor que 8,6 K e a rotação está abaixo de 1.380 rpm. Sem unidade.
+PWF;Numérico (binário: 0 ou 1);Falha de potência (Power Failure). Ocorre quando a potência, dada por torque x velocidade angular (rad/s), fica abaixo de 3.500 W ou acima de 9.000 W. Sem unidade.
+OSF;Numérico (binário: 0 ou 1);Falha por sobrecarga (Overstrain Failure). Ocorre quando o produto entre desgaste e torque passa de 11.000 min·Nm (variante L), 12.000 (M) ou 13.000 (H). Sem unidade.
+RNF;Numérico (binário: 0 ou 1);Falha aleatória (Random Failure). Ocorre com probabilidade de 0,1% em qualquer registro, independentemente dos parâmetros do processo. Sem unidade.
